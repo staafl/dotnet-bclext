@@ -1,0 +1,1 @@
+@cddo src\bclx prepend *.cs < license.txt

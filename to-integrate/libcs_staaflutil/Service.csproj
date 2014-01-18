@@ -1,0 +1,1479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7AFA68BB-E9FC-408C-9975-5E021C1A348C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fairweather.Service</RootNamespace>
+    <AssemblyName>service</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>key1.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\build\ses\debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WINFORMS NET20</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Non_winforms|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\build\non_winforms\</OutputPath>
+    <DefineConstants>TRACE;COND_TRACE UNSAFE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Winforms|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\build\winforms\</OutputPath>
+    <DefineConstants>WINFORMS NET20 LINQBRIDGE_LIB TRACE </DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>false</Optimize>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'win7srv|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\ref\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WINFORMS NET20</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="arc, Version=1.8.4.27, Culture=neutral, PublicKeyToken=dcb6544da5b0c83d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ref\arc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.PointOfService, Version=1.12.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Common\ref\Microsoft.PointOfService.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="print, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b01ac7765cd9cdd3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ref\print.dll</HintPath>
+    </Reference>
+    <Reference Include="sam, Version=1.0.0.101, Culture=neutral, PublicKeyToken=d19c9e17f0e59540, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ref\sam.dll</HintPath>
+    </Reference>
+    <Reference Include="sdo, Version=1.0.0.117, Culture=neutral, PublicKeyToken=aa2ee9173db93b44, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\CalculatorTextBoxWrapper.cs" />
+    <Compile Include="Business\Classes\Any_List_Cursor.cs" />
+    <Compile Include="Business\Classes\Incremental_Search_Provider.cs" />
+    <Compile Include="Business\Classes\List_Cursor.cs" />
+    <Compile Include="Business\Classes\Records_Cursor.cs" />
+    <Compile Include="Business\Classes\Records_Access.cs" />
+    <Compile Include="Business\Classes\Sage_Datum.cs" />
+    <Compile Include="Business\Classes\Sorted_List_Cursor.cs" />
+    <Compile Include="Business\Code\Activation_Program.cs" />
+    <Compile Include="Business\Code\Command_Line.cs" />
+    <Compile Include="Business\Code\Encryption.cs" />
+    <Compile Include="Business\Code\Exception_Handlers.cs" />
+    <Compile Include="Business\Code\Financial.cs" />
+    <Compile Include="Business\Code\Methods.cs" />
+    <Compile Include="Business\Code\Printing_1.cs" />
+    <Compile Include="Business\Code\Printing_2.cs" />
+    <Compile Include="Business\Code\Progress_Reporter.cs" />
+    <Compile Include="Business\Code\Sage_Binding.cs" />
+    <Compile Include="Business\Code\_Global_State.cs" />
+    <Compile Include="Business\Config_Gui\Config_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Dialogs\Barcode_Structure_Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Dialogs\Config_GDI_Printer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Dialogs\Config_Notepad_Printer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Dialogs\Config_OPOS_Printer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Dialogs\DTA_Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Dialogs\Edit_Quick_Tab_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Dialogs\Edit_Quick_Tab_Form.Designer.cs">
+      <DependentUpon>Edit_Quick_Tab_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Dialogs\Receipt_Designer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Dialogs\Receipt_Designer.Designer.cs">
+      <DependentUpon>Receipt_Designer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Main_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\Multi_Combobox_Manager.cs" />
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\POS_Advanced_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\POS_Advanced_Settings_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Barcodes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Discounts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\Tab_General.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Nominal_Codes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Perf.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Printing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Quick.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Security.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\TE_Advanced_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\TE_Advanced_Settings_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\TE_Tab_General.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\POS_Advanced_Settings\TE_Tab_Nominal_Codes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Code.cs" />
+    <Compile Include="Business\Config_Gui\Settings_Control\Settings_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Settings_Control\Ses_Settings_Tab_1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Settings_Control\Ses_Settings_Tab_2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Settings_Control\Ses_Settings_Tab_3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Settings_Control\Ses_Settings_Tab_4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Settings_Control\Sit_Settings_Tab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Tab_1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Tab_2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Config_Gui\Tab_3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Tab_Control\Advanced_Tab_Control_State.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Custom_Flow_Layout_Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\DTA_Tab_Control_2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Translucent_Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Data\Files.cs" />
+    <Compile Include="Business\Data\Formatting.cs" />
+    <Compile Include="Business\Data\Global.cs" />
+    <Compile Include="Business\Data\Products.cs" />
+    <Compile Include="Business\Data\Sage_Int.cs" />
+    <Compile Include="Business\Data\Ses_Cfg.cs" />
+    <Compile Include="Business\Data\Transactions_Entry.cs" />
+    <Compile Include="Business\Dialogs\Pos_Tool_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Quick_Items_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Quick_Items_Form.Designer.cs">
+      <DependentUpon>Quick_Items_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Enums\Allocation_Type.cs" />
+    <Compile Include="Business\Enums\App.cs" />
+    <Compile Include="Business\Enums\App_Suite.cs" />
+    <Compile Include="Business\Enums\Auto_Sales_History_Mode.cs" />
+    <Compile Include="Business\Enums\Average_Cost_Type.cs" />
+    <Compile Include="Business\Enums\Command_Line_Status.cs" />
+    <Compile Include="Business\Enums\Customer_Wizard_Result.cs" />
+    <Compile Include="Business\Enums\Data_Type.cs" />
+    <Compile Include="Business\Enums\Document_Type.cs" />
+    <Compile Include="Business\Enums\DTA_File.cs" />
+    <Compile Include="Business\Enums\EOS_Breakdown_Type.cs" />
+    <Compile Include="Business\Enums\FF_Alloc_Type.cs" />
+    <Compile Include="Business\Enums\Form_Kind.cs" />
+    <Compile Include="Business\Enums\Grid_Mode.cs" />
+    <Compile Include="Business\Enums\Grid_Workflow_Direction.cs" />
+    <Compile Include="Business\Enums\Index_Type.cs" />
+    <Compile Include="Business\Enums\Invoice_Recalling_State.cs" />
+    <Compile Include="Business\Enums\Launch_Failed_Reason.cs" />
+    <Compile Include="Business\Enums\Message_Type.cs" />
+    <Compile Include="Business\Enums\Named_Message.cs" />
+    <Compile Include="Business\Enums\Our_DGV_Column_Type.cs" />
+    <Compile Include="Business\Enums\Payment_Type.cs" />
+    <Compile Include="Business\Enums\Prepare_For_Work_Reason.cs" />
+    <Compile Include="Business\Enums\Printing_Provider.cs" />
+    <Compile Include="Business\Enums\Printing_Scenario.cs" />
+    <Compile Include="Business\Enums\Quick_Search_Form_Event.cs" />
+    <Compile Include="Business\Enums\Quick_Search_Form_Mode.cs" />
+    <Compile Include="Business\Enums\Range_Selection_Result.cs" />
+    <Compile Include="Business\Enums\Receipt_Layout.cs" />
+    <Compile Include="Business\Enums\Record_Type.cs" />
+    <Compile Include="Business\Enums\Return_Code.cs" />
+    <Compile Include="Business\Enums\Sage_Object_Type.cs" />
+    <Compile Include="Business\Enums\Screen_Type.cs" />
+    <Compile Include="Business\Enums\Selection_Result.cs" />
+    <Compile Include="Business\Enums\Sub_App.cs" />
+    <Compile Include="Business\Enums\User_Level.cs" />
+    <Compile Include="Business\Ini_Helpers\ICurrent_User_Mode.cs" />
+    <Compile Include="Business\Printing\Primitive_Base.cs" />
+    <Compile Include="Business\Printing\Primitive_Line.cs" />
+    <Compile Include="Business\Printing\Primitive_Rectangle.cs" />
+    <Compile Include="Business\Printing\Primitive_Text.cs" />
+    <Compile Include="Business\Printing\XPrinting.cs" />
+    <Compile Include="Business\Quick_Tab_Man.cs" />
+    <Compile Include="Business\Sage_Data_Records\Sage_Access.cs" />
+    <Compile Include="Business\Sage_Data_Records\Sage_Version.cs" />
+    <Compile Include="Business\Sage_Data_Records\Sdr_Common.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Sage_Data_Records\Sdr_Data.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Sage_Data_Records\Sage_Records_Cursor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Sage_Data_Records\Sdr_Payments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Sage_Data_Records\Sdr_Products.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Sage_Data_Records\Sdr_Products_Posting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Sage_Data_Records\Sdr_Products_Scanning.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Sage_Data_Records\Sdr_Querying.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Sage_Data_Records\Sdr_Remittance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Sage_Data_Records\Sdr_Sales_Payment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Sage_Fields\Sage_Bank_Record.cs" />
+    <Compile Include="Business\Sage_Fields\Sage_Nominal_Record.cs" />
+    <Compile Include="Business\SIT_Common\Company_Settings.cs" />
+    <Compile Include="Business\SIT_Common\Settings_Old.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Structs\Command_Line_Switch_Data.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Structs\Connection_Data.cs" />
+    <Compile Include="Business\Controls\Address_Box.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Border\Advanced_Border.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Border\Advanced_Border_Drawing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Border\Advanced_Border_Fields.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Border\Advanced_Border_Static.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Combo_Box\Our_Advanced_Combo_Box.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Combo_Box\Our_Advanced_Combo_Box_QSF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Grid_Control\Advanced_GridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Grid_Control\Advanced_GridView_Fields.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Grid_Control\Advanced_GridView_Selected_Cell.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Grid_Control\Advanced_Grid_View_Controls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Grid_Control\Advanced_Grid_View_Open_Close.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Grid_Control\Advanced_Grid_View_State.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Tab_Button\Advanced_Tab_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Tab_Button\Advanced_Tab_Button_Drawing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Tab_Button\Advanced_Tab_Button_Interaction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Tab_Control\Advanced_Tab_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Advanced_Tab_Control\Advanced_Tab_Control_Interaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Amount_Label\Amount_Control_Controller.cs" />
+    <Compile Include="Business\Controls\Amount_Label\Amount_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Amount_Label\IAmountControl.cs" />
+    <Compile Include="Business\Controls\Amount_Label\Text_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Buttons\ProductsButton_Base_Events.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Buttons\ProductsButton_Base__Main.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Buttons\ProductsButton_Custom__Main.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Buttons\ProductsButton_Flat__Main.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Buttons\ProductsButton_Normal__Main.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Buttons\Unselectable_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Buttons\Update_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Calculator_Engine.cs" />
+    <Compile Include="Business\Controls\Calculator\Calculator_Fields.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Calculator\Calculator_Interface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Calculator\Calculator_Misc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Calculator\Calculator_Type.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Calculator\Calculator__Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Combo_Box\ComboBox_Misc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Combo_Box\ComboBox_Box.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Combo_Box\ComboBox_Events.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Combo_Box\ComboBox_ShortList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Combo_Box\ComboBox_Value.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Combo_Box\ComboBox__Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Combo_Box\ComboBox__Main.Designer.cs">
+      <DependentUpon>ComboBox__Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\Calendar\Calendar_Buttons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\Calendar\Calendar_Dates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\Calendar\Calendar_Drawing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\Calendar\Calendar_Interface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\Calendar\Calendar_Selection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\Calendar\Calendar_Size.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\Calendar\Calendar_Structs.cs" />
+    <Compile Include="Business\Controls\Date_Time\Calendar\Calendar__Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\DateTimeExtended.Constants.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\DateTime_Box.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\DateTime_Calendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\DateTime_Events.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\DateTime_Value.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\DateTime__Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Date_Time\Date_Time_Element.cs" />
+    <Compile Include="Business\Controls\DTA_Tab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\DTA_Tab_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Fake_Group_Box.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Fake_Group_Box.Designer.cs">
+      <DependentUpon>Fake_Group_Box.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Controls\Fake_Header.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Flat_Checkbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Keyboard\Keyboard_Data.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Keyboard\Keyboard_Drawing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Keyboard\Keyboard_Helpers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Keyboard\Keyboard_Input.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Keyboard\Keyboard_Interface.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Keyboard\Keyboard__Main.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\ListView\ListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\ListView\ListView_Drawing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\ListView\ListView_HeaderWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\ListView\ListView_WndProc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\ListView\SafeVirtualListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Moving_Border.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Numeric_Box\NumericBox_Box.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Numeric_Box\NumericBox_Numpad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Numeric_Box\NumericBox__Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Numeric_Box\Numpad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Numeric_Box\Numpad.Designer.cs">
+      <DependentUpon>Numpad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Controls\Password_Panel\Password_Panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Qsf_List_View\Qsf_List_View_Drawing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Qsf_List_View\Qsf_List_View_Incr_Search.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Qsf_List_View\Qsf_List_View_Sorting.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Qsf_List_View\Qsf_List_View__Main.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Short_List\ShortList_Comments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Short_List\ShortList_Drawing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Short_List\ShortList_Events.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Short_List\ShortList_Helpers.cs" />
+    <Compile Include="Business\Controls\Short_List\ShortList_Interface.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Short_List\ShortList_Resizing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Short_List\ShortList_Scroll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Short_List\ShortList__Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Static_Border.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Payments_Grid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Text_Boxes\Our_MaskedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Text_Boxes\Our_Text_Box.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Text_Boxes\_Our_TextBoxService.cs" />
+    <Compile Include="Business\Controls\Validating_Box\ValidatingBox_Input.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Validating_Box\ValidatingBox_Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Validating_Box\ValidatingBox__Main.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Controls\Validating_Box\ValidatingBox__Main.Designer.cs">
+      <DependentUpon>ValidatingBox__Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\About_Box.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\About_Box.Designer.cs">
+      <DependentUpon>About_Box.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\Add_Company_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Add_Company_Form.Designer.cs">
+      <DependentUpon>Add_Company_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\Company_Registration_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Version_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Version_Form.Designer.cs">
+      <DependentUpon>Version_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\Edit_Product\Edit_Product_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Edit_Product\Edit_Product_Form.Designer.cs">
+      <DependentUpon>Edit_Product_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\Edit_Product\Tab1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Edit_Product\Tab1.Designer.cs">
+      <DependentUpon>Tab1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\Edit_Product\Tab2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Edit_Product\Tab2.Designer.cs">
+      <DependentUpon>Tab2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\Form_Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Form_Base.Designer.cs">
+      <DependentUpon>Form_Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\Hook_Enabled_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Keyboard_Form\Keyboard_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Keyboard_Form\Keyboard_Form.Designer.cs">
+      <DependentUpon>Keyboard_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\Message_Box.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\New_Customer\New_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\New_Customer\New_Customer_Fields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\New_Customer\New_Customer_Interaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Password_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Password_Form.Designer.cs">
+      <DependentUpon>Password_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\Please_Wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Please_Wait.Designer.cs">
+      <DependentUpon>Please_Wait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\Quick_Search_Form\Quick_Search_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Quick_Search_Form\Quick_Search_Form.Designer.cs">
+      <DependentUpon>Quick_Search_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\Quick_Search_Form\Quick_Search_Form_Interaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Quick_Search_Form\Quick_Search_Form_Misc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Sage_Bound_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Search\Search_DGV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Search\Search_DGV_Fields.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Search\Search_DGV_Interaction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Search\Search_DGV_Query.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Search\Search_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Search\Search_Form.Designer.cs">
+      <DependentUpon>Search_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Dialogs\Search\Search_Form_Fields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Search\Search_Form_Interaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Search\Search_Form_Searching.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Wait_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Dialogs\Wait_Form.Designer.cs">
+      <DependentUpon>Wait_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Enums\Constraint_Resolution_Type.cs" />
+    <Compile Include="Business\Enums\DTA_Combo_Box_Type.cs" />
+    <Compile Include="Business\Enums\Document_Permissions.cs" />
+    <Compile Include="Business\Enum_Service.cs" />
+    <Compile Include="Business\EventArgs\AggregateValueChangedEventArgs.cs" />
+    <Compile Include="Business\EventArgs\ColumnEditedEventArgs.cs" />
+    <Compile Include="Business\EventArgs\ColumnEditingEventArgs.cs" />
+    <Compile Include="Business\EventArgs\ColumnEventArgs.cs" />
+    <Compile Include="Business\EventArgs\MainColumnValueEnteredEventArgs.cs" />
+    <Compile Include="Business\Exceptions\XCyclic_Dependency.cs" />
+    <Compile Include="Business\Exceptions\XIni.cs" />
+    <Compile Include="Business\Exceptions\XOur.cs" />
+    <Compile Include="Business\Exceptions\XSage_Conn.cs" />
+    <Compile Include="Business\Exceptions\XSage.cs" />
+    <Compile Include="Business\Exceptions\XSage_Logic.cs" />
+    <Compile Include="Business\Exceptions\XStack_Unrolling.cs" />
+    <Compile Include="Business\Exceptions\XVoid.cs" />
+    <Compile Include="Business\Grid_Magic.cs" />
+    <Compile Include="Business\Ini_Fields.cs" />
+    <Compile Include="Business\Ini_Helpers\Entry_Screen_Helper.cs" />
+    <Compile Include="Business\Ini_Helpers\FFDGV_Helper.cs" />
+    <Compile Include="Business\Ini_Helpers\TE_Helper.cs" />
+    <Compile Include="Business\Ini_Helpers\Activation_Helper.cs" />
+    <Compile Include="Business\Ini_Helpers\Barcodes_Helper.cs" />
+    <Compile Include="Business\Ini_Helpers\Company_Helper.cs" />
+    <Compile Include="Business\Ini_Helpers\General_Helper.cs" />
+    <Compile Include="Business\Ini_Helpers\Ini_Helper.cs" />
+    <Compile Include="Business\Ini_Helpers\POS_Helper.cs" />
+    <Compile Include="Business\Ini_Helpers\Printing_Helper.cs" />
+    <Compile Include="Business\Ini_Helpers\SDR_DTA_Helper.cs" />
+    <Compile Include="Business\Ini_Helpers\Write_Able_Helper.cs" />
+    <Compile Include="Business\Ini_Main.cs" />
+    <Compile Include="Business\Interfaces\IActiveControlEnabledForm.cs" />
+    <Compile Include="Business\Interfaces\IBreakdown.cs" />
+    <Compile Include="Business\Interfaces\ICalculatorTextBox.cs" />
+    <Compile Include="Business\Interfaces\IControlHost.cs" />
+    <Compile Include="Business\Interfaces\IFree_Form.cs" />
+    <Compile Include="Business\Interfaces\Interface_Service.cs" />
+    <Compile Include="Business\Interfaces\IQuickSearchFormHost.cs" />
+    <Compile Include="Business\Interfaces\IScreen.cs" />
+    <Compile Include="Business\Interfaces\ITextBox.cs" />
+    <Compile Include="Business\Point_Of_Sales\Enums.cs" />
+    <Compile Include="Business\Point_Of_Sales\POS_Bixolon_350_Printer.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_Bixolon_Print_Font.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_Columns_Info.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_For_Net.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_For_Net_Font.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_For_Net_Printer.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_GDI_Font.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_GDI_Printer.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_Notepad_Printer.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_Printer_Engine.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_Printing_Exception.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_Printing_Recorder.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_Print_Font.cs" />
+    <Compile Include="Business\Point_Of_Sales\Pos_Void_Printer.cs" />
+    <Compile Include="Business\Printing\Customer.cs" />
+    <Compile Include="Business\Printing\Interfaces.cs" />
+    <Compile Include="Business\Printing\Primitive_Image.cs" />
+    <Compile Include="Business\Printing\Print_Document.cs" />
+    <Compile Include="Business\Printing\Print_Element.cs" />
+    <Compile Include="Business\Printing\Print_Engine.cs" />
+    <Compile Include="Business\Printing\Print_Engine_Base.cs" />
+    <Compile Include="Business\Printing\Print_Frame.cs" />
+    <Compile Include="Business\Querying\Logic.cs" />
+    <Compile Include="Business\Querying\Logic_2.cs" />
+    <Compile Include="Business\Querying\Predicate_Builder.cs" />
+    <Compile Include="Business\Querying\Query.cs" />
+    <Compile Include="Business\Querying\Query_Delegates.cs" />
+    <Compile Include="Business\Querying\Query_Enums.cs" />
+    <Compile Include="Business\Querying\Query_Structs.cs" />
+    <Compile Include="Business\Querying\Syntax\BinaryAST.cs" />
+    <Compile Include="Business\Querying\Syntax\IntermediateAST.cs" />
+    <Compile Include="Business\Querying\Syntax\Tokens.cs" />
+    <Compile Include="Business\Sage_Connection.cs" />
+    <Compile Include="Business\Structs\Sales_History_Entry.cs" />
+    <Compile Include="Business\Structs\Screen_Info.cs" />
+    <Compile Include="Business\Structs\Account_Record.cs" />
+    <Compile Include="Business\Structs\Alloc_Data.cs" />
+    <Compile Include="Business\Structs\Alloc_Line.cs" />
+    <Compile Include="Business\Structs\Bank_Record.cs" />
+    <Compile Include="Business\Structs\Cheque_Info.cs" />
+    <Compile Include="Business\Structs\Command_Line_Info.cs" />
+    <Compile Include="Business\Structs\Company_Number.cs" />
+    <Compile Include="Business\Structs\Company_Record.cs" />
+    <Compile Include="Business\Structs\Country_Record.cs" />
+    <Compile Include="Business\Structs\Credentials.cs" />
+    <Compile Include="Business\Structs\Credit_Allocation_Data.cs" />
+    <Compile Include="Business\Structs\Currency_Record.cs" />
+    <Compile Include="Business\Structs\Day_Totals.cs" />
+    <Compile Include="Business\Structs\Document_Info.cs" />
+    <Compile Include="Business\Structs\Expense_Info.cs" />
+    <Compile Include="Business\Structs\Freeform_Row_Data.cs" />
+    <Compile Include="Business\Structs\Future_Cheque_Info.cs" />
+    <Compile Include="Business\Structs\Grid_Info.cs" />
+    <Compile Include="Business\Structs\Invoice_Breakdown_Data.cs" />
+    <Compile Include="Business\Structs\Item_Info.cs" />
+    <Compile Include="Business\Structs\Memorized_Item.cs" />
+    <Compile Include="Business\Structs\Memorized_Items.cs" />
+    <Compile Include="Business\Structs\Memorize_Header.cs" />
+    <Compile Include="Business\Structs\Nominal_Record.cs" />
+    <Compile Include="Business\Structs\Payment_Info.cs" />
+    <Compile Include="Business\Structs\Posted_Document_Info.cs" />
+    <Compile Include="Business\Structs\Postings.cs" />
+    <Compile Include="Business\Structs\Posting_Amounts.cs" />
+    <Compile Include="Business\Structs\Posting_Details.cs" />
+    <Compile Include="Business\Structs\Posting_Info.cs" />
+    <Compile Include="Business\Structs\Printing_Data.cs" />
+    <Compile Include="Business\Structs\Printing_Data_EndOfShift.cs" />
+    <Compile Include="Business\Structs\Printing_Data_Receipt.cs" />
+    <Compile Include="Business\Structs\Printing_Data_Sale.cs" />
+    <Compile Include="Business\Structs\Product.cs" />
+    <Compile Include="Business\Structs\Product_Index.cs" />
+    <Compile Include="Business\Structs\Receipt_Info.cs" />
+    <Compile Include="Business\Structs\Receipt_Layout_SV.cs" />
+    <Compile Include="Business\Structs\Remittance_Postings.cs" />
+    <Compile Include="Business\Structs\Sage_Invoice_Data.cs" />
+    <Compile Include="Business\Structs\TE_Truncated_Entry.cs" />
+    <Compile Include="Business\Structs\Tax_Code.cs" />
+    <Compile Include="Business\Structs\Transaction.cs" />
+    <Compile Include="Business\Structs\Transaction_Breakdown_Data.cs" />
+    <Compile Include="Business\Activation\License_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Activation\License_Form.Designer.cs">
+      <DependentUpon>License_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Activation\Change_License_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Activation\Change_License_Form.Designer.cs">
+      <DependentUpon>Change_License_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Activation\Structs\Company_Registration_Result.cs" />
+    <Compile Include="Business\Activation\Initial_Company_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Activation\Initial_Company_Form.Designer.cs">
+      <DependentUpon>Initial_Company_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Activation\Initial_Company_Form_Fields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Activation\Initial_Company_Form_Interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Activation\Structs\License_Data.cs" />
+    <Compile Include="Business\Activation\License_Form_Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Activation\Structs\License_Result.cs" />
+    <Compile Include="Business\Activation\SDO_Activation_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business\Activation\SDO_Activation_Form.Designer.cs">
+      <DependentUpon>SDO_Activation_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Activation\Structs\SDO_Registration_Result.cs" />
+    <Compile Include="Business\Activation\_Activation_Data.cs" />
+    <Compile Include="Business\Activation\_Activation_Helpers.cs" />
+    <Compile Include="Business\Activation\_Activation_Helpers_Activate.cs" />
+    <Compile Include="Business\Activation\_Activation_Helpers_Fields.cs" />
+    <Compile Include="Business\Activation\_Activation_Helpers_Upgrade.cs" />
+    <Compile Include="Business\Activation\_Enums.cs" />
+    <Compile Include="Business\Activation\_Interfaces.cs" />
+    <Compile Include="Business\Sage_Data_Records\Sage_Logic.cs" />
+    <Compile Include="Business\Sage_Fields\Sage_Field.cs" />
+    <Compile Include="Business\Sage_Fields\Sage_Field_Data.cs" />
+    <Compile Include="Business\Sage_Fields\Sage_Header_Data.cs" />
+    <Compile Include="Business\Sage_Fields\Sage_Invoice_Record.cs" />
+    <Compile Include="Business\Sage_Fields\Sage_Sales_Record.cs" />
+    <Compile Include="Business\Sage_Fields\Sage_Split_Data.cs" />
+    <Compile Include="Business\Sage_Fields\Sage_Stock_Record.cs" />
+    <Compile Include="Business\Sage_Fields\Sage_Stock_Tran.cs" />
+    <Compile Include="Business\Standardization\Colors.cs" />
+    <Compile Include="Business\Standardization\Controls.cs" />
+    <Compile Include="Business\Standardization\Dialogs.cs" />
+    <Compile Include="Business\Standardization\DTA_Controls.cs" />
+    <Compile Include="Business\Standardization\Fonts.cs" />
+    <Compile Include="Business\Standardization\Formatting.cs" />
+    <Compile Include="Business\Standardization\MessageBox.cs" />
+    <Compile Include="Business\Standardization\Named_Messages.cs" />
+    <Compile Include="Business\Standardization\Numbers.cs" />
+    <Compile Include="Business\Standardization\Strings.cs" />
+    <Compile Include="Business\Validation_And_Posting\Always_Valid_Rule.cs" />
+    <Compile Include="Business\Validation_And_Posting\Cost_Code_Entered.cs" />
+    <Compile Include="Business\Validation_And_Posting\Data_Line.cs" />
+    <Compile Include="Business\Validation_And_Posting\Def_Nom_Code_Rule.cs" />
+    <Compile Include="Business\Validation_And_Posting\Forbidden_Chars.cs" />
+    <Compile Include="Business\Validation_And_Posting\General_Rules.cs" />
+    <Compile Include="Business\Validation_And_Posting\Has_Amount.cs" />
+    <Compile Include="Business\Validation_And_Posting\Header_Fields_Same.cs" />
+    <Compile Include="Business\Validation_And_Posting\Invoice_General_Rules.cs" />
+    <Compile Include="Business\Validation_And_Posting\Inv_Ref_Exists.cs" />
+    <Compile Include="Business\Validation_And_Posting\IRule_etc.cs" />
+    <Compile Include="Business\Validation_And_Posting\JCs_JDs_Balance.cs" />
+    <Compile Include="Business\Validation_And_Posting\Required_Field.cs" />
+    <Compile Include="Business\Validation_And_Posting\Rule_Base.cs" />
+    <Compile Include="Business\Validation_And_Posting\Sage_Collection.cs" />
+    <Compile Include="Business\Validation_And_Posting\Sage_Context.cs" />
+    <Compile Include="Business\Validation_And_Posting\Trans_Line.cs" />
+    <Compile Include="Business\Validation_And_Posting\TT_Brief.cs" />
+    <Compile Include="Business\Validation_And_Posting\TT_Rules.cs" />
+    <Compile Include="Business\Validation_And_Posting\Validation_Error.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\ControlData.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\CurrencyData.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\DepartmentData.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\HeaderData.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\InvoiceData.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\NominalData.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\RemittanceData.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\SalesData.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\SetupData.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\SplitData.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\StockCategory.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\StockData.cs" />
+    <Compile Include="Business\Versioning\Definitions\Data\UsageData.cs" />
+    <Compile Include="Business\Versioning\Definitions\Fields.cs" />
+    <Compile Include="Business\Versioning\Definitions\Indices\BankIndex.cs" />
+    <Compile Include="Business\Versioning\Definitions\Indices\Invoice_Index.cs" />
+    <Compile Include="Business\Versioning\Definitions\Indices\NominalIndex.cs" />
+    <Compile Include="Business\Versioning\Definitions\Indices\PurchaseIndex.cs" />
+    <Compile Include="Business\Versioning\Definitions\Indices\Remittance_Index.cs" />
+    <Compile Include="Business\Versioning\Definitions\Indices\Sales_Index.cs" />
+    <Compile Include="Business\Versioning\Definitions\Indices\Stock_Index.cs" />
+    <Compile Include="Business\Versioning\Definitions\InvoiceItem.cs" />
+    <Compile Include="Business\Versioning\Definitions\InvoicePost.cs" />
+    <Compile Include="Business\Versioning\Definitions\Project\Project.cs" />
+    <Compile Include="Business\Versioning\Definitions\Project\ProjectCostCode.cs" />
+    <Compile Include="Business\Versioning\Definitions\Project\Projects.cs" />
+    <Compile Include="Business\Versioning\Definitions\Records\BankRecord.cs" />
+    <Compile Include="Business\Versioning\Definitions\Records\CountryCodeRecord.cs" />
+    <Compile Include="Business\Versioning\Definitions\Records\Dynamic_Record.cs" />
+    <Compile Include="Business\Versioning\Definitions\Records\InvoiceRecord.cs" />
+    <Compile Include="Business\Versioning\Definitions\Records\NominalRecord.cs" />
+    <Compile Include="Business\Versioning\Definitions\Records\PurchaseRecord.cs" />
+    <Compile Include="Business\Versioning\Definitions\Records\RemittanceRecord.cs" />
+    <Compile Include="Business\Versioning\Definitions\Records\SalesRecord.cs" />
+    <Compile Include="Business\Versioning\Definitions\Records\StockRecord.cs" />
+    <Compile Include="Business\Versioning\Definitions\StockTran.cs" />
+    <Compile Include="Business\Versioning\Definitions\TransactionPost.cs" />
+    <Compile Include="Business\Versioning\SDO_Engine.cs" />
+    <Compile Include="Business\Versioning\Versioning_Enums.cs" />
+    <Compile Include="Business\Versioning\Versioning_Interfaces.cs" />
+    <Compile Include="Business\Versioning\Versioning_Sage_Container.cs" />
+    <Compile Include="Business\Versioning\Versioning_Service.cs" />
+    <Compile Include="Business\Versioning\Work_Space.cs" />
+    <Compile Include="Classes\Boolean_Lock.cs" />
+    <Compile Include="Classes\Csv_Formatter.cs" />
+    <Compile Include="Classes\Data Structures\BinaryTree_Base.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Data Structures\Binary_Tree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\File_Backup_Manager.cs" />
+    <Compile Include="Classes\GUI Miscellanea\Boolean_Column.cs" />
+    <Compile Include="Classes\Ini_Group_Class.cs" />
+    <Compile Include="Classes\Managers\Expiry.cs" />
+    <Compile Include="Magic\bind_values.cs" />
+    <Compile Include="Classes\First_Next.cs" />
+    <Compile Include="Magic\freeze_redraw.cs" />
+    <Compile Include="Magic\get_free_name.cs" />
+    <Compile Include="Magic\lock_text.cs" />
+    <Compile Include="Classes\IO\Csv_Reader.cs" />
+    <Compile Include="Classes\IO\Csv_Writer.cs" />
+    <Compile Include="Classes\Simple_Serializer.cs" />
+    <Compile Include="Magic\distribute.cs" />
+    <Compile Include="Magic\kahan_summ.cs" />
+    <Compile Include="Magic\range_from.cs" />
+    <Compile Include="Business\Quick_Item_Data.cs" />
+    <Compile Include="Structs\Program_File_Info.cs" />
+    <Compile Include="Structs\Double64_Union.cs" />
+    <Compile Include="Structs\Int32_Union.cs" />
+    <Compile Include="Structs\IO_Pair.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structs\Line2D.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Structs\Rectangle_Vertex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\Delegates\Allocator.cs" />
+    <Compile Include="Utils\Delegates\Endo.cs" />
+    <Compile Include="Utils\Delegates\EnumWindowsProc.cs" />
+    <Compile Include="Utils\Delegates\Exception_Handler.cs" />
+    <Compile Include="Utils\Delegates\GetItemDelegate.cs" />
+    <Compile Include="Utils\Delegates\Handler.cs" />
+    <Compile Include="Utils\Delegates\HookProc.cs" />
+    <Compile Include="Utils\Delegates\Reporter.cs" />
+    <Compile Include="Utils\Enums\ASCII_Class.cs" />
+    <Compile Include="Utils\Enums\Before_After.cs" />
+    <Compile Include="Utils\Enums\Communication_Type.cs" />
+    <Compile Include="Utils\Crypt_Clear.cs" />
+    <Compile Include="Utils\Enums\Csv_Error_Type.cs" />
+    <Compile Include="Classes\IO\Csv_Parser.cs" />
+    <Compile Include="Classes\IO\Line_Counter.cs" />
+    <Compile Include="Classes\_Misc\Descriptive.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\_Misc\State_Machine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Collections\Cache_Map.cs" />
+    <Compile Include="Classes\Managers\Disposer.cs" />
+    <Compile Include="Classes\Exceptions_Collector.cs" />
+    <Compile Include="Classes\Flip_Flop.cs" />
+    <Compile Include="Collections\Counter.cs" />
+    <Compile Include="Collections\Hashlist.cs" />
+    <Compile Include="Collections\Insord.cs" />
+    <Compile Include="Native\MENUITEMINFO.cs" />
+    <Compile Include="Native\ProcessEntry32.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Command-line parser\Argument.cs" />
+    <Compile Include="Classes\Command-line parser\Command_Line_Parser.cs" />
+    <Compile Include="Classes\Command-line parser\Switch.cs" />
+    <Compile Include="Statics\_Compression.cs" />
+    <Compile Include="Classes\IO\Debug_Writer.cs" />
+    <Compile Include="Classes\IO\Indented_Writer.cs" />
+    <Compile Include="Classes\IO\Multiple_Writer.cs" />
+    <Compile Include="Classes\IO\Prefix_Writer.cs" />
+    <Compile Include="Classes\IO\Writer_Decorator.cs" />
+    <Compile Include="Classes\Ini_File.cs" />
+    <Compile Include="Classes\On_Dispose.cs" />
+    <Compile Include="Collections\Sequence.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Collections\Sequence2.cs" />
+    <Compile Include="Classes\Managers\Updater.cs" />
+    <Compile Include="Classes\_Static.cs" />
+    <Compile Include="Classes\Managers\Updater1.cs" />
+    <Compile Include="Classes\Managers\Updater2.cs" />
+    <Compile Include="Collections\Collection_Buffer.cs" />
+    <Compile Include="Collections\Readonly\Array_ro.cs" />
+    <Compile Include="Collections\Cached_IEnumerable.cs" />
+    <Compile Include="Collections\ID_Collection.cs" />
+    <Compile Include="Collections\Counted_Dictionary.cs" />
+    <Compile Include="Collections\Lazy_Dict.cs" />
+    <Compile Include="Collections\Readonly\List_ro.cs" />
+    <Compile Include="Collections\Multi_Dict.cs" />
+    <Compile Include="Collections\Serializable_Dictionary.cs" />
+    <Compile Include="Collections\Sorted_List.cs" />
+    <Compile Include="Collections\Tuple_Dict_2.cs" />
+    <Compile Include="Collections\Tuple_Dict.cs" />
+    <Compile Include="Collections\Read_Write.cs" />
+    <Compile Include="Collections\Synonyms.cs" />
+    <Compile Include="Utils\Args.cs" />
+    <Compile Include="Statics\Debugging_Output.cs" />
+    <Compile Include="Classes\Throw_Helper.cs" />
+    <Compile Include="Collections\Readonly\Dict_ro.cs" />
+    <Compile Include="Statics\_Serialization.cs" />
+    <Compile Include="Extensions\Ext_Casts.cs" />
+    <Compile Include="Extensions\Ext_Arrays.cs" />
+    <Compile Include="LinqBridge-1.1.cs" />
+    <Compile Include="Native\Filter.cs" />
+    <Compile Include="Native\Hook.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Native\Hook_Misc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Statics\_Exception_Factory.cs" />
+    <Compile Include="Collections\Set.cs" />
+    <Compile Include="Statics\Debugging_Helpers.cs" />
+    <Compile Include="Utils\Enums\Direction_HVB.cs" />
+    <Compile Include="Utils\Enums\Direction_LR.cs" />
+    <Compile Include="Utils\Enums\Direction_LURD.cs" />
+    <Compile Include="Utils\Enums\Direction_UD.cs" />
+    <Compile Include="Utils\Enums\Error_Mode.cs" />
+    <Compile Include="Utils\Exceptions\XCsv.cs" />
+    <Compile Include="Utils\Delegates\_Common.cs" />
+    <Compile Include="Utils\Enums\Rect_Edge.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\Exceptions\XEnum.cs" />
+    <Compile Include="Utils\Enums\_Service.cs" />
+    <Compile Include="Extensions\Ext_Mutators.cs" />
+    <Compile Include="Extensions\Ext_Containers.cs" />
+    <Compile Include="Extensions\Ext_DateTime.cs" />
+    <Compile Include="Extensions\Ext_Exceptions.cs" />
+    <Compile Include="Extensions\Ext_Exceptions_Generic.cs" />
+    <Compile Include="Extensions\Ext_Geometry.cs" />
+    <Compile Include="Extensions\Ext_Iterators.cs" />
+    <Compile Include="Extensions\Ext_Misc.cs" />
+    <Compile Include="Extensions\Ext_Strings.cs" />
+    <Compile Include="Extensions\Ext_WinForms.cs">
+    </Compile>
+    <Compile Include="Classes\GUI Miscellanea\ListViewColumnSorter.cs" />
+    <Compile Include="Classes\GUI Miscellanea\ListViewItemComparer.cs" />
+    <Compile Include="Statics\_Conversions.cs" />
+    <Compile Include="Statics\_Bit_Manipulation.cs" />
+    <Compile Include="Statics\_Floating_Point.cs" />
+    <Compile Include="Statics\_Typography.cs" />
+    <Compile Include="Structs\Assign_Once.cs" />
+    <Compile Include="Collections\Ring.cs" />
+    <Compile Include="Collections\Two_Way_Dictionary.cs" />
+    <Compile Include="Classes\Lazy.cs" />
+    <Compile Include="Structs\Ini_Field.cs" />
+    <Compile Include="Utils\Enums\Hook_Type.cs" />
+    <Compile Include="Utils\Interfaces\IContains.cs" />
+    <Compile Include="Utils\Interfaces\ICrypt.cs" />
+    <Compile Include="Utils\Interfaces\ICsvFormatter.cs" />
+    <Compile Include="Utils\Interfaces\ICsvFormatter2.cs" />
+    <Compile Include="Utils\Interfaces\ICtor_Meta_Data.cs" />
+    <Compile Include="Utils\Interfaces\IDecrypt.cs" />
+    <Compile Include="Utils\Interfaces\IEncrypt.cs" />
+    <Compile Include="Utils\Interfaces\IHas_Meta.cs" />
+    <Compile Include="Utils\Interfaces\IRead.cs" />
+    <Compile Include="Utils\Interfaces\IReadWrite.cs" />
+    <Compile Include="Utils\Interfaces\IState.cs" />
+    <Compile Include="Utils\Interfaces\IStateMachineUser.cs" />
+    <Compile Include="Utils\Interfaces\ITellAsk.cs" />
+    <Compile Include="Utils\Interfaces\ITellAsk1.cs" />
+    <Compile Include="Utils\Interfaces\ITuple.cs" />
+    <Compile Include="Structs\Mutable_Tuples.cs" />
+    <Compile Include="Structs\Rational.cs" />
+    <Compile Include="Structs\Tuples__1.cs" />
+    <Compile Include="Native\_Key_Codes.cs" />
+    <Compile Include="Native\_Native_Constants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Native\_Native_Methods.cs" />
+    <Compile Include="Magic\binary_search.cs" />
+    <Compile Include="Logging.cs" />
+    <Compile Include="Statics\_Tuples.cs" />
+    <Compile Include="Statics\_Delegates.cs" />
+    <Compile Include="Statics\_Random.cs" />
+    <Compile Include="Structs\Tuples__2.cs" />
+    <Compile Include="Utils\Interfaces\IFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Statics\_Arithmetic.cs" />
+    <Compile Include="Statics\_Helpers.cs" />
+    <Compile Include="Business\SIT_Common\Csv_Error.cs" />
+    <Compile Include="Business\SIT_Common\DD.cs" />
+    <Compile Include="Business\SIT_Common\Field_Count_Validator.cs" />
+    <Compile Include="Business\SIT_Common\Headers.cs" />
+    <Compile Include="Business\SIT_Common\I_SIT_Exe.cs" />
+    <Compile Include="Business\SIT_Common\Line_Data.cs" />
+    <Compile Include="Business\SIT_Common\Settings.cs" />
+    <Compile Include="Business\SIT_Common\Ticker.cs" />
+    <Compile Include="Business\SIT_Engine\SE_Common.cs" />
+    <Compile Include="Business\SIT_Engine\SE_Insert.cs" />
+    <Compile Include="Business\SIT_Engine\SE_Program_Data.cs" />
+    <Compile Include="Business\SIT_Engine\SE_Program_Helpers.cs" />
+    <Compile Include="Business\SIT_Engine\SE_Program_State.cs" />
+    <Compile Include="Business\SIT_Engine\SE_Scan.cs" />
+    <Compile Include="Business\SIT_Engine\_SE_Main.cs" />
+    <Compile Include="Utils\Interfaces\IValue.cs" />
+    <Compile Include="Utils\Enums\Operations.cs" />
+    <Compile Include="Utils\Enums\Path_Type.cs" />
+    <Compile Include="Business\Quick_Tab_File.cs" />
+    <Compile Include="Utils\Rejected_Event_Args.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Business\Config_Gui\Dialogs\Barcode_Structure_Dialog.resx">
+      <DependentUpon>Barcode_Structure_Dialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Dialogs\Config_GDI_Printer.resx">
+      <DependentUpon>Config_GDI_Printer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Dialogs\Config_Notepad_Printer.resx">
+      <DependentUpon>Config_Notepad_Printer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Dialogs\Config_OPOS_Printer.resx">
+      <DependentUpon>Config_OPOS_Printer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Dialogs\Edit_Quick_Tab_Form.resx">
+      <DependentUpon>Edit_Quick_Tab_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Dialogs\Receipt_Designer.resx">
+      <DependentUpon>Receipt_Designer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Main_Form.resx">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\POS_Advanced_Settings.resx">
+      <DependentUpon>POS_Advanced_Settings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Barcodes.resx">
+      <DependentUpon>Tab_Barcodes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Discounts.resx">
+      <DependentUpon>Tab_Discounts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\Tab_General.resx">
+      <DependentUpon>Tab_General.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Nominal_Codes.resx">
+      <DependentUpon>Tab_Nominal_Codes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Perf.resx">
+      <DependentUpon>Tab_Perf.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Printing.resx">
+      <DependentUpon>Tab_Printing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Quick.resx">
+      <DependentUpon>Tab_Quick.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Search.resx">
+      <DependentUpon>Tab_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\Tab_Security.resx">
+      <DependentUpon>Tab_Security.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\TE_Advanced_Settings.resx">
+      <DependentUpon>TE_Advanced_Settings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\TE_Tab_General.resx">
+      <DependentUpon>TE_Tab_General.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\POS_Advanced_Settings\TE_Tab_Nominal_Codes.resx">
+      <DependentUpon>TE_Tab_Nominal_Codes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Settings_Control\Ses_Settings_Tab_1.resx">
+      <DependentUpon>Ses_Settings_Tab_1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Settings_Control\Ses_Settings_Tab_2.resx">
+      <DependentUpon>Ses_Settings_Tab_2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Settings_Control\Ses_Settings_Tab_3.resx">
+      <DependentUpon>Ses_Settings_Tab_3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Settings_Control\Ses_Settings_Tab_4.resx">
+      <DependentUpon>Ses_Settings_Tab_4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Settings_Control\Sit_Settings_Tab.resx">
+      <DependentUpon>Sit_Settings_Tab.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Tab_2.resx">
+      <DependentUpon>Tab_2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Config_Gui\Tab_3.resx">
+      <DependentUpon>Tab_3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Controls\Calculator\Calculator_Misc.resx">
+      <DependentUpon>Calculator_Misc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Controls\Combo_Box\ComboBox__Main.resx">
+      <DependentUpon>ComboBox__Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Controls\Date_Time\DateTime__Main.resx">
+      <DependentUpon>DateTime__Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Controls\Fake_Group_Box.resx">
+      <DependentUpon>Fake_Group_Box.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Controls\Fake_Header.resx">
+      <DependentUpon>Fake_Header.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Controls\Numeric_Box\NumericBox__Main.resx">
+      <DependentUpon>NumericBox__Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Controls\Numeric_Box\Numpad.resx">
+      <DependentUpon>Numpad.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Controls\Advanced_Combo_Box\Our_Advanced_Combo_Box.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Controls\Validating_Box\ValidatingBox__Main.resx">
+      <DependentUpon>ValidatingBox__Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\About_Box.resx">
+      <DependentUpon>About_Box.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Add_Company_Form.resx">
+      <DependentUpon>Add_Company_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Quick_Items_Form.resx">
+      <DependentUpon>Quick_Items_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Version_Form.resx">
+      <DependentUpon>Version_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Edit_Product\Edit_Product_Form.resx">
+      <DependentUpon>Edit_Product_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Edit_Product\Tab1.resx">
+      <DependentUpon>Tab1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Edit_Product\Tab2.resx">
+      <DependentUpon>Tab2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Keyboard_Form\Keyboard_Form.resx">
+      <DependentUpon>Keyboard_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Message_Box.resx">
+      <DependentUpon>Message_Box.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\New_Customer\New_Customer.resx">
+      <DependentUpon>New_Customer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Password_Form.resx">
+      <DependentUpon>Password_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Please_Wait.resx">
+      <DependentUpon>Please_Wait.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Quick_Search_Form\Quick_Search_Form.resx">
+      <DependentUpon>Quick_Search_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Search\Search_DGV.resx">
+      <DependentUpon>Search_DGV.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Search\Search_Form.resx">
+      <DependentUpon>Search_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Dialogs\Wait_Form.resx">
+      <DependentUpon>Wait_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Activation\License_Form.resx">
+      <DependentUpon>License_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Activation\Change_License_Form.resx">
+      <DependentUpon>Change_License_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Activation\Initial_Company_Form.resx">
+      <DependentUpon>Initial_Company_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\Activation\SDO_Activation_Form.resx">
+      <DependentUpon>SDO_Activation_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\img_calculator.bmp" />
+    <Content Include="Resources\img_calculator_disabled.bmp" />
+    <Content Include="Resources\img_calendar.bmp" />
+    <Content Include="Resources\img_calendar_disabled.bmp" />
+    <Content Include="Resources\img_calendar_disabled1.bmp" />
+    <Content Include="Resources\img_down.bmp" />
+    <Content Include="Resources\img_resize_grip.bmp" />
+    <Content Include="Resources\img_up.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key1.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Business\Dialogs\Quick_Search_Form\old\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

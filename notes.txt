@@ -1,0 +1,44 @@
+D:\_lib\_notes\libcs.txt
+
+- indicate coupled files required for reuse
+
+-------------------------
+~~~~ ideas
+-------------------------
+
+sequence and dictionary comparable and hashed by elements
+
+HugeArray
+    .Length can > int.MaxValue
+    
+MutString
+
+reflection serializer
+
+reflection cache
+
+extension:
+  read textreader until end - as a string or IEnumerable<String>
+
+http://www.codeproject.com/Tips/300798/A-custom-string-to-handle-UTF8-natively-in-Csharp
+    
+      new { action }.NullCheck();
+      
+recursive globbing
+-------------------------
+~~~~ FileDictionary
+-------------------------
+
+unordered tuple
+    FlushPolicy
+        EveryWrite
+        Explicit
+        EveryXWrites
+    ? Keep file open
+    ? ReloadPolicy
+        EveryRead
+    ? ConflictResolution
+        Exception
+        AssumeOurs
+        AssumeTheirs
+
