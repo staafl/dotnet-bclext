@@ -6,6 +6,10 @@ D:\_lib\_notes\libcs.txt
 ~~~~ ideas
 -------------------------
 
+exceptlast
+
+object to object
+
 sequence and dictionary comparable and hashed by elements
 
 HugeArray
