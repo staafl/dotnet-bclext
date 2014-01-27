@@ -6,6 +6,8 @@ D:\_lib\_notes\libcs.txt
 ~~~~ ideas
 -------------------------
 
+DuckType
+
 exceptlast
 
 object to object
