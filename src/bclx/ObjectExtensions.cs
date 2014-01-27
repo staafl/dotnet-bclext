@@ -22,5 +22,21 @@ namespace bclx
           throw new ArgumentNullException(prop.Name);
       }
     }
+    
+    public static void Log<T>(this Func<T> obj, TextWriter tw = null, [CallerMemberName] string methodName = null)
+    {
+        tw = tw ?? Console.Out;
+        tw .WriteLine(methodName);
+        foreach (var prop in typeof(T).GetProperties())
+        {
+            tw .WriteLine("{0}={1}", prop.Name, prop.GetValue(obj));
+        }
+    }
+
+    public static void LogExpression(Expression<Func<object>> l, TextWriter tw = null)
+    {
+        tw = tw ?? Console.Out;
+        tw.WriteLine("{0}={1}", l.Body.ToString(), l.Compile()());
+    }
   }
 }
