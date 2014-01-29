@@ -49,7 +49,6 @@ namespace bclx
                     continue;
                 yield return elem;
             }
-
         }
     }
 }
