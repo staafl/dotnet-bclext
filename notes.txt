@@ -2,6 +2,11 @@ D:\_lib\_notes\libcs.txt
 
 - indicate coupled files required for reuse
 
+- to integrate:
+  azuredragon
+  hotbuttons.utils
+  hematite
+
 -------------------------
 ~~~~ ideas
 -------------------------
