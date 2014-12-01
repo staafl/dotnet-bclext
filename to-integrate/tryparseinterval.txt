@@ -1,0 +1,36 @@
+        
+        static bool TryParseInterval(string asString, out int start, out int end)
+        {
+            string[] split = asString.Split(new[] { ',', '-', ';' });
+            if (split.Length == 1)
+            {
+                if (int.TryParse(split[0], out start))
+                {
+                    end = start;
+                    return true;
+                }
+                else
+                {
+                    start = end = 0;
+                    return false;
+                }
+            }
+            else if (split.Length == 2)
+            {
+                if (int.TryParse(split[0], out start) &&
+                    int.TryParse(split[1], out end))
+                {
+                    return true;
+                }
+                else
+                {
+                    start = end = 0;
+                    return false;
+                }
+            }
+            else
+            {
+                start = end = 0;
+                return false;
+            }
+        }
